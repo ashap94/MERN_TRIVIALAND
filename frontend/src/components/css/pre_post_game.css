@@ -8,6 +8,8 @@
   justify-content: space-between;
   align-content: center;
   text-align: center;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .main-page-links {
@@ -75,6 +77,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  height: 50vh;
 }
 
 .creators-list > li {
