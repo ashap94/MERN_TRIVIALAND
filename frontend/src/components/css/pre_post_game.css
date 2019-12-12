@@ -32,6 +32,10 @@
   /* animation: color-change-2 8s ease-in-out infinite; */
 }
 
+.demo{
+  cursor: pointer;
+}
+
 /* @keyframes color-change-2 {
     25% {
         background-color: #DD71FF;
@@ -99,7 +103,7 @@
 
 .session-page-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   margin-top: 40px;
 }

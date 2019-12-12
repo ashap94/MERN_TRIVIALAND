@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
-import { logout, login } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
+// import { fetchGameStats } from '../../actions/game_stats_actions';
 
-import NavBar from './navbar';
+import MainPage from './main_page';
 
 const mapStateToProps = (state) => {
   // let gameStats = state.entities.stats;
   return {
-    errors: state.errors.session,
-    loggedIn: state.session.isAuthenticated
+    errors: state.errors.session
     // gameStats
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: user => dispatch(login(user)),
-    logout: ()=>dispatch(logout())
+    login: user => dispatch(login(user))
     // fetchGameStats: () => dispatch(fetchGameStats())
   }
 }
@@ -23,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NavBar);
+)(MainPage);

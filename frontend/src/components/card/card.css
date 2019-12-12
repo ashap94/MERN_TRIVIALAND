@@ -175,6 +175,7 @@ section {
 .already-answered-wrong {
   background-color: red;
   z-index: -1000;
+  height: 12vh;
 }
 
 .scene-face {
@@ -185,6 +186,7 @@ section {
 .already-answered-right {
   background-color: #5dd682;
   z-index: -1000;
+  height: 12vh;
 }
 
 /*

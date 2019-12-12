@@ -6,6 +6,7 @@ import RoundTwoContainer from "./rounds/multiplayer/round_two_multi_container";
 import RoundThree from "./rounds/multiplayer/round_three_mult";
 import ScoreBoardContainer from "./scoreboard/scoreboard_container";
 import GameOver from "./game_over";
+import GameOverLost from './game_over_lost';
 import HighScores from "./high_scores";
 import Clock from "./clock";
 import Marquee from "./rounds/multiplayer/marquee";
@@ -371,21 +372,24 @@ class MultiplayerGame extends React.Component {
         />
       );
       // should be a game over board with high score(s)
+    // } else if (this.state.round === 7) {
+    //   display = (
+    //     <HighScores
+    //       players={this.state.players}
+    //       changeRounds={this.changeRounds}
+    //       round1Score={this.state.round1Score}
+    //       round2Score={this.state.round2Score}
+    //       round3Score={this.state.round3Score}
+    //       currentScore={this.state.currentScore}
+    //     />
+    //   );
+      // should be a game over board
     } else if (this.state.round === 7) {
       display = (
-        <HighScores
-          players={this.state.players}
-          changeRounds={this.changeRounds}
-          round1Score={this.state.round1Score}
-          round2Score={this.state.round2Score}
-          round3Score={this.state.round3Score}
-          currentScore={this.state.currentScore}
-        />
-      );
-      // should be a game over board
-    } else if (this.state.round === 8) {
-      display = (
         <GameOver
+          // currentUser={this.props.currentUser}
+          // rnd3Players={this.state.testRnd3Players}
+          players={this.state.players}
           round1Score={this.state.round1Score}
           round2Score={this.state.round2Score}
           round3Score={this.state.round3Score}
@@ -393,6 +397,10 @@ class MultiplayerGame extends React.Component {
         />
       );
       // should be a game over board
+    } else if (this.state.round === 10) {
+      display = (
+        <GameOverLost />
+      )
     }
 
     return (
@@ -401,7 +409,7 @@ class MultiplayerGame extends React.Component {
         {display}
 
         <Marquee players={this.state.players} />
-        <h1>{this.props.currentUser.username}</h1>
+        {/* <h1>{this.props.currentUser.username}</h1> */}
       </div>
     );
   }
