@@ -32,6 +32,10 @@
   /* animation: color-change-2 8s ease-in-out infinite; */
 }
 
+.demo{
+  cursor: pointer;
+}
+
 /* @keyframes color-change-2 {
     25% {
         background-color: #DD71FF;
