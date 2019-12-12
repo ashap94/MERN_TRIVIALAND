@@ -75,7 +75,7 @@
   margin: 0px auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   height: 50vh;
 }
@@ -83,10 +83,11 @@
 .creators-list > li {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   padding: 30px;
   padding-bottom: 20px;
   padding-top: 10px;
+  height: 10vh;
 }
 
 .creators-list > li > p {
