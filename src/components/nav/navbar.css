@@ -1,10 +1,10 @@
 
 .navvy{
-    background-color: pink;;
+    background-color: #9cc25e;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: color-change 6s ease-in-out infinite;
+    /* animation: color-change 6s ease-in-out infinite; */
     color: white;
 }
 
@@ -26,7 +26,7 @@ img{
 
 
 
-@keyframes color-change {
+/* @keyframes color-change {
     25% {
         background-color: #D65DB1;
         color: pink;
@@ -43,7 +43,7 @@ img{
         background-color: pink;
         color: #D65DB1;
     }
-}
+} */
 
 
 /* //colors #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871] */
