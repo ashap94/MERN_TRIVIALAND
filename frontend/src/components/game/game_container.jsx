@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     let rnd1Qs = state.entities.questions.round1Questions;
     let rnd2Qs = state.entities.questions.round2Questions;
     let rnd3Qs = state.entities.questions.round3Questions;
+    console.log(state)
   return {
     currentUser: state.session.user,
     questions,

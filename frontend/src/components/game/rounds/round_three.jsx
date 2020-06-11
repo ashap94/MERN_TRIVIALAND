@@ -171,9 +171,9 @@ class RoundThree extends React.Component {
             <h1 className={this.state.miniRound === 2? "rnd-3-cat-instructs instructs-bold" : "rnd-3-cat-instructs"}>2: You have 10 Seconds to choose your wager</h1>
             <h1 className={this.state.miniRound === 3? "rnd-3-cat-instructs instructs-bold" : "rnd-3-cat-instructs"}>3: You have 15 Seconds to Answer</h1>
             {(this.state.currentUsersCategory)?
-                (<div className="rnd-3-cat-selector">{this.state.currentUsersCategory}</div>)
+                (<div className="rnd-3-cat-selector">{this.state.currentUsersCategory.split("_").join(" ")}</div>)
                 :
-                this.state.showingCategoriesArr.map(category=>(<div className="rnd-3-cat-selector" onClick={()=>this.chooseCategory(category)}>{category}</div>))
+                this.state.showingCategoriesArr.map(category=>(<div className="rnd-3-cat-selector" onClick={()=>this.chooseCategory(category)}>{category.split("_").join(" ")}</div>))
             }
         </div>)
         :
