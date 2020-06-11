@@ -32,20 +32,7 @@ class MultiplayerGame extends React.Component {
       testRnd3Plyrs: [],
       round2Players: null
 
-      // currentPlayer: {
-      //   id: this.props.currentUser.id,
-      //   username: this.props.currentUser.username,
-      //   round1Score: 0,
-      //   round2Score: 0,
-      //   round3Score: 0,
-      //   currentScore: 0,
-      //   inGame: true,
-      //   round2Strikes: 0,
-      //   clock: 0
-      // }
     };
-    // this.variable = 0;
-    // this.round2Players = [];
 
     this.updateScore = this.updateScore.bind(this);
     this.changeRounds = this.changeRounds.bind(this);
@@ -59,17 +46,6 @@ class MultiplayerGame extends React.Component {
   updateRound2HighScores() {}
 
   componentDidMount() {
-    //console.log(this.props)
-    // this.props.fetchAllQuestions();
-    // this.props.fetchUsersInGame();
-
-    // socket.on("update score", ({ room, game }) => {
-    //   socket.to(room).emit("update score", { room, game });
-    // });
-
-    // this.props.socket.on("remove player", ({ room, game }) => {
-    //   this.props.removePlayerFromGame(game);
-    // });
 
     this.props.socket.off("remove player");
 
@@ -294,7 +270,7 @@ class MultiplayerGame extends React.Component {
       return <Redirect to="/profile" />;
     }
 
-    console.log(this.state.round);
+    // console.log(this.state);
 
     let questions = this.props.rnd1Qs;
     //console.log(this.new_questions)
