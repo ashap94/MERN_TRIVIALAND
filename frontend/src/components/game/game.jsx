@@ -13,7 +13,7 @@ class Game extends React.Component {
     super(props);
     //Need to add current user in State
     this.state = {
-      round: 1,
+      round: 5,
       currentScore: 0,
       round1Score: 0,
       round2Score: 0,
@@ -27,8 +27,8 @@ class Game extends React.Component {
         currentScore: 0,
         inGame: true,
         round2Strikes: 0,
-        clock: 0
-      }
+        clock: 0,
+      },
     };
 
     this.updateScore = this.updateScore.bind(this);
@@ -42,18 +42,18 @@ class Game extends React.Component {
     this.props.fetchAllQuestions();
     // this.props.fetchUsersInGame();
     this.setState({
-      currentPlayer: { currentScore: this.state.currentPlayer.currentScore }
+      currentPlayer: { currentScore: this.state.currentPlayer.currentScore },
     });
   }
 
   updateScore(points) {
     if (this.state.currentScore + points < 0) {
       this.setState({
-        currentScore: 0
+        currentScore: 0,
       });
     } else {
       this.setState({
-        currentScore: this.state.currentScore + points
+        currentScore: this.state.currentScore + points,
       });
     }
   }
@@ -62,16 +62,16 @@ class Game extends React.Component {
     // console.log('changing rounds')
     if (round === "gameover") {
       this.setState({
-        round: 10
+        round: 10,
       });
     } else if (this.state.round === 1) {
       this.setState({
         round1Score: this.state.currentScore,
-        round: this.state.round + 1
+        round: this.state.round + 1,
       });
     } else if (this.state.round === 2) {
       this.setState({
-        round: this.state.round + 1
+        round: this.state.round + 1,
       });
     } else if (this.state.round === 3) {
       let calculatedScore = this.state.currentScore - this.state.round1Score;
@@ -79,11 +79,11 @@ class Game extends React.Component {
       this.setState({
         round2Score: calculatedScore,
         // currentPlayer: {round2Score: (this.state.currentPlayer.currentScore - this.state.currentPlayer.round1Score)},
-        round: this.state.round + 1
+        round: this.state.round + 1,
       });
     } else if (this.state.round === 4) {
       this.setState({
-        round: this.state.round + 1
+        round: this.state.round + 1,
       });
     } else if (this.state.round === 5) {
       let calculatedScore =
@@ -94,11 +94,11 @@ class Game extends React.Component {
       this.setState({
         round3Score: calculatedScore,
         // currentPlayer: {round3Score: (this.state.currentPlayer.currentScore - this.state.currentPlayer.round1Score - this.state.currentPlayer.round2Score) },
-        round: this.state.round + 1
+        round: this.state.round + 1,
       });
     } else {
       this.setState({
-        round: this.state.round + 1
+        round: this.state.round + 1,
       });
     }
     // console.log(this.state.round)
@@ -114,9 +114,9 @@ class Game extends React.Component {
       {
         username: this.props.currentUser.username,
         isActive: {
-          currentScore: this.state.currentScore
-        }
-      }
+          currentScore: this.state.currentScore,
+        },
+      },
     ];
   }
 

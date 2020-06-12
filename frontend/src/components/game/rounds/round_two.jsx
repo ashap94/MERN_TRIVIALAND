@@ -11,7 +11,7 @@ class RoundTwo extends React.Component {
       currentUser: this.props.currentUser,
       strikes: 0, // if number becomes three,
       rightAnswers: 0,
-      timerSeconds: 15
+      timerSeconds: 30,
     };
     //React hook for Clock
     this.clock = React.createRef();
@@ -35,7 +35,7 @@ class RoundTwo extends React.Component {
   wrongChoice() {
     this.setState({
       strikes: this.state.strikes + 1,
-      rightAnswers: this.state.rightAnswers + 1
+      rightAnswers: this.state.rightAnswers + 1,
     });
 
     if (this.state.strikes === 3) {
@@ -50,19 +50,19 @@ class RoundTwo extends React.Component {
   rightAnswer(answer) {
     //calling clock child component reset clock function to display new countdown
     if (this.clock.current && this.state.rightAnswers < 3) {
-      this.clock.current.resetClock();
+      this.clock.current.resetClock(30);
     }
     clearTimeout(this.questionTimer);
     this.setState({
-      timerSeconds: 15
+      timerSeconds: 30,
     });
     if (answer) {
       this.setState({
-        rightAnswers: this.state.rightAnswers + 1
+        rightAnswers: this.state.rightAnswers + 1,
       });
     } else {
       this.setState({
-        strikes: this.state.strikes + 1
+        strikes: this.state.strikes + 1,
       });
     }
   }
@@ -109,7 +109,7 @@ class RoundTwo extends React.Component {
 
   setTimer() {
     if (this.state.strikes < 3 && this.state.rightAnswers < 3) {
-      this.questionTimer = setTimeout(this.rightAnswer, 15000);
+      this.questionTimer = setTimeout(this.rightAnswer, 30000);
     }
   }
 
@@ -138,15 +138,22 @@ class RoundTwo extends React.Component {
     let questions = this.props.questions;
 
     let catName = Object.keys(this.props.questions)[0];
-    // console.log(questions)
-    // console.log('ALL QUESTIONS')
+
+    /*
+      console.log(questions)
+    */
+
+    /*
+      console.log('ALL QUESTIONS')
+    */
+
     return (
       <div className="game-board-rnd2">
         <div className="game-board-rnd2-left">
           <div className="round-two-rules">
             <h1>Round Two</h1>
             <h2>
-              Rules: you have 15 seconds to answer a question or you will get
+              Rules: you have 30 seconds to answer a question or you will get
               one wrong
             </h2>
             <h2>You must get any 3 out of 5 questions right</h2>
@@ -164,8 +171,8 @@ class RoundTwo extends React.Component {
         </div>
 
         <div className="game-board-rnd2-right">
-          <div className ="rnd2-clock">
-            <Clock seconds={15} ref={this.clock} />
+          <div className="rnd2-clock">
+            <Clock seconds={30} ref={this.clock} />
           </div>
           <div className="rnd2-username">
             <h1>{this.state.currentUser.username}</h1>
@@ -178,7 +185,7 @@ class RoundTwo extends React.Component {
             <h1>Wrong Answers</h1>
             {wrongAnswersDisplay}
           </div>
-          <div className='rnd2-player-scores-parent'>
+          <div className="rnd2-player-scores-parent">
             <h1>Player Scores</h1>
           </div>
         </div>
