@@ -23,6 +23,7 @@ import { fetchGameStats } from "./actions/game_stats_actions";
 // socket.on("echo", msg => {
 //   console.log(msg);
 // });
+  console.log("Testing");
 
 document.addEventListener("DOMContentLoaded", () => {
   // let client = socketIOClient("http://localhost:5000");

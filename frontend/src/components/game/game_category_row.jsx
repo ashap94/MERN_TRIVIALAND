@@ -64,6 +64,7 @@ class GameCategoryRow extends React.Component {
         })
         //debugger
     }
+    
     round1Display() {
         var value = 0;
 
@@ -72,7 +73,8 @@ class GameCategoryRow extends React.Component {
             return <CardContainer updateScore={this.props.updateScore} value={value} question={question} />
         });
 
-        let categoryName = this.props.category;
+        let categoryName = this.props.category.split("_").join(" ");
+        console.log(categoryName)
         display.unshift(<div className="category-container">{categoryName}</div>)
         return display;
     }

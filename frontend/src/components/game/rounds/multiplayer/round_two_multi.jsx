@@ -316,7 +316,7 @@ class RoundTwo extends React.Component {
         </div>
 
         <div className="game-board-rnd2-right">
-          <div>
+          <div className="rnd2-clock">
             <Clock seconds={120} ref={this.clock} />
           </div>
 
@@ -331,7 +331,7 @@ class RoundTwo extends React.Component {
             <h1>Wrong Answers</h1>
             {wrongAnswersDisplay}
           </div>
-          <div>
+          <div className="rnd2-player-scores-parent">
             <h1>Player Scores</h1>
           </div>
         </div>

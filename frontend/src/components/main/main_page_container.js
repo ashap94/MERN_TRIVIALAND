@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 // import { fetchGameStats } from '../../actions/game_stats_actions';
 
-import LoginForm from './login_form';
+import MainPage from './main_page';
 
 const mapStateToProps = (state) => {
   // let gameStats = state.entities.stats;
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginForm);
+)(MainPage);

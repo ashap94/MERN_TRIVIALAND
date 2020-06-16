@@ -19,6 +19,18 @@ class NavBar extends React.Component {
       this.props.logout();
   }
 
+  handleDemoLogin(e) {
+    // e.preventDefault();
+    console.log("login pressed")
+
+    let user = {  
+      username: "Mx. Demo",
+      password: "123456"
+    };
+
+    this.props.login(user);
+  }
+
   getLinks() {
       if (this.props.loggedIn) {
         return (
@@ -32,6 +44,7 @@ class NavBar extends React.Component {
             <div className="navbar-links-container">
                 <Link className="link-button" to={'/signup'}>Signup</Link>
                 <Link className="link-button" to={'/login'}>Login</Link>
+                <div className="link-button demo"  onClick={()=>this.handleDemoLogin()}>Demo</div>
             </div>
         );
       }

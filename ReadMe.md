@@ -2,9 +2,9 @@
 
 _A multi-player online trivia game._
 
-[TriviaLand Live](https://trivialand-app.herokuapp.com/ "Checkoff")
+[TriviaLand Live](https://trivialand-app.herokuapp.com/ "Trivialand")
 
-![round 1](https://github.com/jbotoro/markdown_images/blob/master/round%201%20fixed.gif)
+![round 1](https://github.com/jbotoro/markdown_images/blob/master/round%201%20super%20fixed.gif)
 ![round 2](https://github.com/jbotoro/markdown_images/blob/master/round%202%20gif.gif)
 ![round 3](https://github.com/jbotoro/markdown_images/blob/master/round%203%20gif.gif)
 

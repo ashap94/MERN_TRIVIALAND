@@ -4,6 +4,7 @@ import RoundOne from "./rounds/round_one";
 import RoundTwoContainer from "./rounds/round_two_container";
 import RoundThree from "./rounds/round_three";
 import ScoreBoardContainer from "./scoreboard/scoreboard_container";
+import GameOverLost from './game_over_lost';
 import GameOver from "./game_over";
 import HighScores from "./high_scores";
 import Clock from "./clock";
@@ -209,6 +210,10 @@ class Game extends React.Component {
         />
       );
       // should be a game over board
+    } else if (this.state.round === 10) {
+      display = (
+        <GameOverLost />
+      )
     }
 
     return (

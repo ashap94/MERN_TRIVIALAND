@@ -6,6 +6,7 @@ import RoundTwoContainer from "./rounds/multiplayer/round_two_multi_container";
 import RoundThree from "./rounds/multiplayer/round_three_mult";
 import ScoreBoardContainer from "./scoreboard/scoreboard_container";
 import GameOver from "./game_over";
+import GameOverLost from './game_over_lost';
 import HighScores from "./high_scores";
 import Clock from "./clock";
 import Marquee from "./rounds/multiplayer/marquee";
@@ -31,20 +32,7 @@ class MultiplayerGame extends React.Component {
       testRnd3Plyrs: [],
       round2Players: null
 
-      // currentPlayer: {
-      //   id: this.props.currentUser.id,
-      //   username: this.props.currentUser.username,
-      //   round1Score: 0,
-      //   round2Score: 0,
-      //   round3Score: 0,
-      //   currentScore: 0,
-      //   inGame: true,
-      //   round2Strikes: 0,
-      //   clock: 0
-      // }
     };
-    // this.variable = 0;
-    // this.round2Players = [];
 
     this.updateScore = this.updateScore.bind(this);
     this.changeRounds = this.changeRounds.bind(this);
@@ -58,17 +46,6 @@ class MultiplayerGame extends React.Component {
   updateRound2HighScores() {}
 
   componentDidMount() {
-    //console.log(this.props)
-    // this.props.fetchAllQuestions();
-    // this.props.fetchUsersInGame();
-
-    // socket.on("update score", ({ room, game }) => {
-    //   socket.to(room).emit("update score", { room, game });
-    // });
-
-    // this.props.socket.on("remove player", ({ room, game }) => {
-    //   this.props.removePlayerFromGame(game);
-    // });
 
     this.props.socket.off("remove player");
 
@@ -293,7 +270,7 @@ class MultiplayerGame extends React.Component {
       return <Redirect to="/profile" />;
     }
 
-    console.log(this.state.round);
+    // console.log(this.state);
 
     let questions = this.props.rnd1Qs;
     //console.log(this.new_questions)
@@ -371,21 +348,24 @@ class MultiplayerGame extends React.Component {
         />
       );
       // should be a game over board with high score(s)
+    // } else if (this.state.round === 7) {
+    //   display = (
+    //     <HighScores
+    //       players={this.state.players}
+    //       changeRounds={this.changeRounds}
+    //       round1Score={this.state.round1Score}
+    //       round2Score={this.state.round2Score}
+    //       round3Score={this.state.round3Score}
+    //       currentScore={this.state.currentScore}
+    //     />
+    //   );
+      // should be a game over board
     } else if (this.state.round === 7) {
       display = (
-        <HighScores
-          players={this.state.players}
-          changeRounds={this.changeRounds}
-          round1Score={this.state.round1Score}
-          round2Score={this.state.round2Score}
-          round3Score={this.state.round3Score}
-          currentScore={this.state.currentScore}
-        />
-      );
-      // should be a game over board
-    } else if (this.state.round === 8) {
-      display = (
         <GameOver
+          // currentUser={this.props.currentUser}
+          // rnd3Players={this.state.testRnd3Players}
+          players={this.state.players}
           round1Score={this.state.round1Score}
           round2Score={this.state.round2Score}
           round3Score={this.state.round3Score}
@@ -393,6 +373,10 @@ class MultiplayerGame extends React.Component {
         />
       );
       // should be a game over board
+    } else if (this.state.round === 10) {
+      display = (
+        <GameOverLost />
+      )
     }
 
     return (
@@ -401,7 +385,7 @@ class MultiplayerGame extends React.Component {
         {display}
 
         <Marquee players={this.state.players} />
-        <h1>{this.props.currentUser.username}</h1>
+        {/* <h1>{this.props.currentUser.username}</h1> */}
       </div>
     );
   }

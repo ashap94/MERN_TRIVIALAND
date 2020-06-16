@@ -1,15 +1,20 @@
 
 .navvy{
-    background-color: pink;;
+    background-color: #9cc25e;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: color-change 6s ease-in-out infinite;
+    /* animation: color-change 6s ease-in-out infinite; */
     color: #DD4B47;
     border-bottom: 1px solid black;
 }
 
 .navbar-links{
+    display: flex;
+
+}
+
+.navbar-links-container{
     display: flex;
 
 }

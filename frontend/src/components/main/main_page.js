@@ -2,7 +2,20 @@ import React from 'react';
 import '../css/pre_post_game.css';
 import { Link } from 'react-router-dom';
 
+
 class MainPage extends React.Component {
+
+  handleDemoLogin(e) {
+    // e.preventDefault();
+    console.log("login pressed")
+
+    let user = {  
+      username: "Mx. Demo",
+      password: "123456"
+    };
+
+    this.props.login(user);
+  }
 
   render() {
     return (
@@ -11,6 +24,7 @@ class MainPage extends React.Component {
         <div className="main-page-links">
           <Link className="link-button-main" to={'/signup'}>Signup</Link>
           <Link className="link-button-main" to={'/login'}>Login</Link>
+          <div className="link-button-main demo" onClick={()=>this.handleDemoLogin()}>Demo</div>
         </div>
         <div className="creators-box">
           <h3>Created by:</h3>
