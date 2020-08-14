@@ -139,6 +139,25 @@
   font-weight: 800;
 }
 
+.session-form button {
+  margin-bottom: 10px;
+  background-color: #F3EEE3;
+  font-size: 20px;
+  padding: 2px 10px;
+  color: #DD4B47;
+  font-weight: 800;
+}
+
+.session-form h3 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  padding: 2px 10px;
+  color: #7f5ac3;
+  font-weight: 800;
+  text-shadow: -5px 5px 5px lightgreen;
+}
+
 .submit-link-button {
   background-color: #F3EEE3;
   color: #DD4B47;

@@ -9,7 +9,9 @@ class SignupForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      errors: {}
+      passwordConfirmation: '',
+      errors: {},
+      errorPasswordMismatch: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,12 +38,22 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let user = {
-      username: this.state.username,
-      password: this.state.password,
-    };
 
-    this.props.signup(user, this.props.history); 
+    // debugger
+    if (this.state.password !== this.state.passwordConfirmation) {
+      debugger
+      this.setState({ errorPasswordMismatch: true })
+      
+    } else {
+      // debugger
+      let user = {
+        username: this.state.username,
+        password: this.state.password,
+      };
+  
+      this.props.signup(user, this.props.history); 
+    }
+
   }
 
   renderErrors() {
@@ -63,6 +75,7 @@ class SignupForm extends React.Component {
       <div className="session-page-content">
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
+            <h3>Signup</h3>
             <input className="placeholder-text"type="text"
               value={this.state.username}
               onChange={this.update('username')}
@@ -73,6 +86,24 @@ class SignupForm extends React.Component {
               onChange={this.update('password')}
               placeholder="Password"
             />
+            <input className="placeholder-text" type="password"
+              value={this.state.passwordConfirmation}
+              onChange={this.update('passwordConfirmation')}
+              placeholder="Confirm Password"
+            />
+            {this.state.errorPasswordMismatch ? 
+              <p
+                style={{
+                  fontSize: "20px",
+                  padding: "2px 10px",
+                  color: "#DD4B47",
+                  fontWeight: "800"
+                }}
+              >
+                **Password mismatch**
+              </p> 
+              : 
+              null}
             <input className="submit-link-button" type="submit" value="Submit" />
             {this.renderErrors()}
           </form>

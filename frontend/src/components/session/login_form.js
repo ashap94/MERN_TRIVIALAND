@@ -38,6 +38,18 @@ class LoginForm extends React.Component {
     this.props.login(user); 
   }
 
+  handleDemoLogin(e) {
+    // e.preventDefault();
+    console.log("login pressed")
+
+    let user = {  
+      username: "Mx. Demo",
+      password: "123456"
+    };
+
+    this.props.login(user);
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -57,6 +69,7 @@ class LoginForm extends React.Component {
       <div className="session-page-content">
         <div className="session-form-container">
           <form className="session-form" onSubmit={this.handleSubmit}>
+            <h3>Login</h3>
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
@@ -68,6 +81,11 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             <input className="submit-link-button" type="submit" value="Submit" />
+
+            <button className="submit-link-button" onClick={()=>this.handleDemoLogin()}>
+              Demo Login
+            </button>
+            
             {this.renderErrors()}
           </form>
         </div>

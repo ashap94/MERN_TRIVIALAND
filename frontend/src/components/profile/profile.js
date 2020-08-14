@@ -64,19 +64,19 @@ class Profile extends React.Component {
     let user = this.props.users[id];
     let username = this.props.currentUser.username;
 
-    let fetchAllGamesButton =
-      username === "Benny" || username === "aaron" ? (
-        <button className="play-button" onClick={this.fetchAllGames}>
-          Show Games on Console
-        </button>
-      ) : null;
+    // let fetchAllGamesButton =
+    //   username === "Benny" || username === "aaron" ? (
+    //     <button className="play-button" onClick={this.fetchAllGames}>
+    //       Show Games on Console
+    //     </button>
+    //   ) : null;
 
-    let deleteAllGamesButton =
-      username === "Benny" || username === "aaron" ? (
-        <button className="play-button" onClick={this.deleteAllGames}>
-          Delete All Games
-        </button>
-      ) : null;
+    // let deleteAllGamesButton =
+    //   username === "Benny" || username === "aaron" ? (
+    //     <button className="play-button" onClick={this.deleteAllGames}>
+    //       Delete All Games
+    //     </button>
+    //   ) : null;
 
     console.log(this.props.currentUser);
 
@@ -84,13 +84,13 @@ class Profile extends React.Component {
       return null;
     }
 
-    let hasStats = !!user["gamesPlayed"];
+    // let hasStats = !!user["gamesPlayed"];
 
-    if (!hasStats) {
+    // if (!hasStats) {
       return (
         <div className="profile-content">
           <div className="profile-stats">
-            <h2>Stats for {currentUser.username}</h2>
+            <h2>Welcome {currentUser.username}</h2>
             <p>This user has no data</p>
           </div>
           <div>
@@ -103,34 +103,36 @@ class Profile extends React.Component {
             <button className="play-button" onClick={this.multiplayerGame}>
               Start MultiPlayer Game
             </button>
-            {fetchAllGamesButton}
-            {deleteAllGamesButton}
+            {/* {fetchAllGamesButton}
+            {deleteAllGamesButton} */}
           </div>
         </div>
       );
-    } else {
-      return (
-        <div className="profile-content">
-          <div className="profile-stats">
-            <h2>Stats for {currentUser.username}</h2>
-            <UserStatsDisplay user={user} />
-          </div>
-          <div className="play-buttons">
-            <button
-              className="play-button"
-              onClick={() => this.playGame("one")}
-            >
-              Play 1 Player Game
-            </button>
-            <button className="play-button" onClick={this.multiplayerGame}>
-              Start MultiPlayer Game
-            </button>
-            {fetchAllGamesButton}
-            {deleteAllGamesButton}
-          </div>
-        </div>
-      );
-    }
+      
+    // }
+    //  else {
+    //   return (
+    //     <div className="profile-content">
+    //       <div className="profile-stats">
+    //         <h2>Stats for {currentUser.username}</h2>
+    //         <UserStatsDisplay user={user} />
+    //       </div>
+    //       <div className="play-buttons">
+    //         <button
+    //           className="play-button"
+    //           onClick={() => this.playGame("one")}
+    //         >
+    //           Play 1 Player Game
+    //         </button>
+    //         <button className="play-button" onClick={this.multiplayerGame}>
+    //           Start MultiPlayer Game
+    //         </button>
+    //         {fetchAllGamesButton}
+    //         {deleteAllGamesButton}
+    //       </div>
+    //     </div>
+    //   );
+    // }
   }
 }
 
