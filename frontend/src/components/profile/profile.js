@@ -89,11 +89,8 @@ class Profile extends React.Component {
     // if (!hasStats) {
       return (
         <div className="profile-content">
-          <div className="profile-stats">
-            <h2>Welcome {currentUser.username}</h2>
-            <p>This user has no data</p>
-          </div>
-          <div>
+          
+          <div className="profile-content-buttons">
             <button
               className="play-button"
               onClick={() => this.playGame("one")}
@@ -106,6 +103,46 @@ class Profile extends React.Component {
             {/* {fetchAllGamesButton}
             {deleteAllGamesButton} */}
           </div>
+
+          <div className="profile-stats">
+            <h2>Welcome {currentUser.username}</h2>
+            <h2>Main Objective is to reach the highest score possible utilizing your trivia knowledge!</h2>
+            <h2>How to play:</h2>
+            <h3>Round 1: (Classic Trivia)</h3>
+            <h3>Single/Multiplayer:</h3>
+              <ul>
+                <li>Player(s) are given a board with 5 different categories.</li>
+                <li>Each Category has 5 questions.</li>
+                <li>Questions are ordered from easy to hard questions, the more points assigned to a question, the harder it is!</li>
+                <li>Player(s) are given 2 minutes to answer as many questions as possible.</li>
+                <li>Each question answered wrong, the same magnitude will be deducted from current score.</li>
+              </ul>
+
+            <h3>Round 2: (Single Category Elimination)</h3>
+            <h3>Single/Multiplayer:</h3>
+            
+            <ul>
+              <li>Player(s) are given a single category of questions and are given a total of 6 chances to answer 3 questions correct</li>
+              <li>Player(s) are allowed to choose </li>
+              <li>After each correct/incorrect answer to a question, users will have their respective grids assigned a check (<span style={{color: "lightgreen"}}>green</span> correct) or X (<span style={{color: "red"}}>red</span> incorrect) (x)</li>
+              <li>Player(s) are only given 15 seconds for each question. Failure to answer a question on time will result in a X.</li>
+              <li>If a user accrues 3 checks, they advance to the next round.</li>
+              <li>If a user accrues 3 X, they are eliminated and the game ends for them.</li>
+            </ul>
+
+            <h3>Round 3: (Single Category Elimination)</h3>
+            <h3>Single/Multiplayer:</h3>
+
+            <ul>
+              <li>Player(s) will be allowed the choice of 5 different categories to choose from and will automatically be assigned one hard question to answer.</li>
+              <li>Player(s) have 30 seconds to answer said question from category.</li>
+              <li>Player(s) may wager a certain amount, or all, of their points of theirs so that they may potentially double up on those points if question answered correctly. Question answered wrongly will result in deduction of amount wagered.</li>
+            </ul>
+
+            <h3>And Game over! Good job! If multiple players, individual with highest points is victor.</h3>
+            
+          </div>
+
         </div>
       );
       
