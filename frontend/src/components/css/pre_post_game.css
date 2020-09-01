@@ -198,6 +198,14 @@
   padding: 20px;
   margin-right: 50px;
   box-shadow: 2px 2px black;
+
+  /* new additions below, test on smaller resolutions */
+
+  padding-top: 510px;
+  height: 70vh;
+  overflow: auto;
+  overflow-y: scroll;
+
 }
 
 .profile-stats ul {
